@@ -14,15 +14,13 @@
 
 Future<String> fetchUserName() {
   return Future.delayed(Duration(seconds: 3), () {
-    // return "Ferhat";
-    return Future.error("Kein Name gefunden");
+    return "Ferhat";
   });
 }
 
 Future<int> fetchUserAge() {
   return Future.delayed(Duration(seconds: 2), () {
-    // return 42;
-    return Future.error("Kein Alter gefunden");
+    return 42;
   });
 }
 
@@ -31,13 +29,9 @@ void main() {
 
   fetchUserName().then((name) {
     print("Name: $name");
-  }).catchError((error) {
-    print("Fehler beim Namen: $error");
   });
 
   fetchUserAge().then((age) {
     print("Alter: $age");
-  }).catchError((error) {
-    print("Fehler beim Alter: $error");
   });
 }
